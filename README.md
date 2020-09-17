@@ -1,1 +1,1 @@
-## A graphql app for learning purpouses
+## A graphql playground
