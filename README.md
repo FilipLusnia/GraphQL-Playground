@@ -1,0 +1,1 @@
+## A graphql app for learning purpouses
