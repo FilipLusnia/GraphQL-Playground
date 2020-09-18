@@ -1,7 +1,14 @@
 const express = require('express');
+const {graphqlHTTP} = require('express-graphql');
+const schema = require('./schema/schema');
 
 const app = express();
 
-app.listen(4000, ()=> {
-    console.log("slucham na porcie 4000")
-})
+app.use('/graphql', graphqlHTTP({
+  schema,
+  graphiql: true
+}));
+
+app.listen(3000, ()=> {
+    console.log("slucham na porcie 3000")
+});
