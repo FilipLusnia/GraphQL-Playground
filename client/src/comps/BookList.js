@@ -12,17 +12,20 @@ const getBooksQuery = gql`
 
 export default function App() {
 
-  const {loading, error, data} = useQuery(getBooksQuery)
-
-  console.log(data)
+  const {data, loading} = useQuery(getBooksQuery)
 
   return (
     <div>
+      <h1>Moje książki: </h1>
+      {loading ? 
+        <div> Ładuję książki... </div> 
+      :
         <ul>
-            <li>
-                book
-            </li>
+            {data.books.map(e => 
+              <li key={e.id}>{e.name}</li>
+            )}
         </ul>
+      }
     </div>
   )
 }
