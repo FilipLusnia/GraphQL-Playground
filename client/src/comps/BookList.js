@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
+import BookDetails from './BookDetails';
 import {useQuery} from '@apollo/client';
 import {getBooksQuery} from '../queries/queries';
 
 export default function BookList() {
 
   const {data, loading} = useQuery(getBooksQuery)
+  const [selected, setSelected] = useState();
 
   return (
     <div>
@@ -13,11 +15,12 @@ export default function BookList() {
         <div> Ładuję książki... </div> 
       :
         <ul>
-            {data.books.map(e => 
-              <li key={e.id}>{e.name}</li>
+            {data.books.map(item => 
+              <li key={item.id} onClick={e => setSelected(item.id)} >{item.name}</li>
             )}
         </ul>
       }
+      <BookDetails BookData={selected}/>
     </div>
   )
 }
