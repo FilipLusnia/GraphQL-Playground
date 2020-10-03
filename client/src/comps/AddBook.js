@@ -24,32 +24,33 @@ export default function AddBook() {
     }
     
     return(
-        <form onSubmit={handleSubmit}>
-            <h1>Dodaj książkę:</h1>
-            <div>
-                <label>Tytuł książki:</label>
-                <input onChange={e => getTitle(e.target.value)} type="text" />
-            </div>
-            <div>
-                <label>Gatunek:</label>
-                <input onChange={e => getGenre(e.target.value)} type="text" />
-            </div>
-            <div>
-                <label>Autor:</label>
-                <select onChange={e => getAuthor(e.target.value)}>
-                    <option>Wybierz autora:</option>
-                    {loading ?
-                        <option>Ładuję...</option>
-                    :
-                        authorsList.authors.map(e => 
-                            <option key={e.id} value={e.id}>{e.name}</option>
-                        )
-                    }
-                </select>
-            </div>
-            <button>+</button>
-
-        </form>
+        <div className="form_container">
+            <form onSubmit={handleSubmit}>
+                <h1>Dodaj książkę:</h1>
+                <div>
+                    <label>Tytuł książki:</label>
+                    <input onChange={e => getTitle(e.target.value)} type="text" />
+                </div>
+                <div>
+                    <label>Gatunek:</label>
+                    <input onChange={e => getGenre(e.target.value)} type="text" />
+                </div>
+                <div>
+                    <label>Autor:</label>
+                    <select onChange={e => getAuthor(e.target.value)}>
+                        <option>Wybierz autora:</option>
+                        {loading ?
+                            <option>Ładuję...</option>
+                        :
+                            authorsList.authors.map(e => 
+                                <option key={e.id} value={e.id}>{e.name}</option>
+                            )
+                        }
+                    </select>
+                </div>
+                <button>+</button>
+            </form>
+        </div>
     )
   }
   

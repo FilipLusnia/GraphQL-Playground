@@ -15,6 +15,7 @@ export default function BookDetails(props) {
         const {book} = detailedBook;
         return(
           <div>
+            <p>Szczegóły książki:</p>
             <h2>{book.name}</h2>
             <p>{book.genre}</p>
             <p>{book.author.name}</p>
@@ -28,16 +29,13 @@ export default function BookDetails(props) {
         )
       } else{
         return(
-          <h3>Nie wybrano żadnej książki.</h3>
+          <h3>Wybeirz książkę, której szczegóły chcesz poznać.</h3>
         )
       }
     }
   
     return (
-      <div>
-        <p>
-            Szczegóły książki:
-        </p>
+      <div className="book_details">
         {displayDetails()}
       </div>
     )

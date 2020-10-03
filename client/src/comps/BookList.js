@@ -9,14 +9,18 @@ export default function BookList() {
   const [selected, setSelected] = useState();
 
   return (
-    <div>
+    <div className="booklist_conatiner">
       <h1>Moje książki: </h1>
       {loading ? 
         <div> Ładuję książki... </div> 
       :
         <ul>
             {data.books.map(item => 
-              <li key={item.id} onClick={e => setSelected(item.id)} >{item.name}</li>
+              <li 
+                key={item.id} 
+                onClick={e => setSelected(item.id)} 
+                className="booklist_item"
+              >{item.name}</li>
             )}
         </ul>
       }

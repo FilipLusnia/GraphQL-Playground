@@ -1,0 +1,87 @@
+body{
+    background-color: rgb(238, 238, 238);
+    font-family: 'Archivo Narrow', sans-serif;
+    margin: 0;
+    color: rgb(24, 24, 24);
+}
+
+.main_interface{
+}
+
+.form_container{
+    position: fixed;
+    top: 0;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(216, 216, 216);
+    height: 200px;
+
+    h1{
+        margin-top: 0;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        input{
+            margin-left: 5px;
+        }
+        select{
+            margin-left: 5px;
+        }
+    }
+
+    button{
+        margin-top: 10px;
+        width: 50px;
+    }
+}
+.booklist_conatiner{
+    width: 50%;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+
+    ul{
+        padding: 0;
+    }
+
+    h1{
+        margin-bottom: 0;
+    }
+
+    .booklist_item{
+        cursor: pointer;
+        list-style: none;
+        border: 1px solid black;
+        border-radius: 4px;
+        margin: 10px 0;
+        display: flex;
+        justify-content: center;
+        padding: 3px;
+        
+        &:hover{
+            background-color: rgb(226, 226, 226);
+        }
+    }
+}
+.book_details{
+    width: 50%;
+    background-color: rgb(255, 199, 79);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    box-shadow: -5px 0px 5px rgba(3, 3, 3, 0.205);
+}

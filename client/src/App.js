@@ -2,6 +2,7 @@ import React from 'react';
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 import BookList from './comps/BookList';
 import AddBook from './comps/AddBook';
+import main from './scss/main.scss';
 
 function App() {
 
@@ -12,9 +13,9 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <div>
-        <BookList/>
+      <div className="main_interface">
         <AddBook/>
+        <BookList/>
       </div>
     </ApolloProvider>
   )
